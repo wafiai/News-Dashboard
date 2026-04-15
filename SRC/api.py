@@ -2,15 +2,19 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib as jb
 import uvicorn
+import requests
+
+
 
 vectorizer = jb.load("models/vectorizer.pkl")
 model = jb.load("models/model.pkl")
+# Loading Model & Vectorizer Because global Varibles load faster
 
 app = FastAPI()
 
 class input(BaseModel):
     text: str 
-
+# Defining Fastapi as app and creatng pydantic 
 
 @app.post("/predict")
 def root(data: input):
@@ -25,11 +29,7 @@ def root(data: input):
     elif mod == 4:
         return "Scfi/Tech"
 
-    
-
-
-
-# 1-World, 2-Sports, 3-Business, 4-Sci/Tech
-
+    # 1-World, 2-Sports, 3-Business, 4-Sci/Tech
+    # Creating API and Loading model inside
 
 
