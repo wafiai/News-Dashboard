@@ -51,7 +51,7 @@ def cleanoutput():
 
 def Prediction():
     Clean_Article = cleanoutput() 
-    API = 'http://127.0.0.1:8000/predict'
+    API = 'https://news-dashboard-s7q8.onrender.com/predict'
     NEWS = (Clean_Article["Description"] + "" + Clean_Article["Title"])
     response = requests.post(API,json={"text":NEWS},timeout=14)
     result = response.json()
