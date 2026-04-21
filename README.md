@@ -4,8 +4,8 @@ A real-time news aggregation and analysis platform. This project uses FastAPI to
 
 ## 🚀 Live Demo
 
-* **Dashboard:** [https://streamlit.app](https://streamlit.app)
-* **API Documentation:** [https://news-dashboard-s7q8.onrender.com/docs](https://news-dashboard-s7q8.onrender.com/docs)
+* **Dashboard:** https://waflpredic.streamlit.app/
+* **API Documentation:** https://news-dashboard-s7q8.onrender.com/docs
 
 ---
 
@@ -13,9 +13,9 @@ A real-time news aggregation and analysis platform. This project uses FastAPI to
 
 * **Frontend:** [Streamlit](https://streamlit.io) for the interactive dashboard.
 * **Backend API:** [FastAPI](https://tiangolo.com) for serving predictions.
-* **Deployment:** [Render](https://render.com) (Backend) & [Streamlit Community Cloud](https://streamlit.iocloud) (Frontend).
+* **Deployment:** [Render](https://render.com) (Backend) & [Streamlit Community Cloud](https://streamlit.io) (Frontend).
 * **AI/ML:** Custom prediction model served via FastAPI.
-* **Data Source:** News data via: [https://newsdata.io](https://newsdata.io)
+* **Data Source:** News data via: https://newsdata.io
 
 ---
 
@@ -49,10 +49,10 @@ pip install -r requirements.txt
 ```
 
 ### 3. Environment Variables
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory and add your keys:
 ```text
 NEWS_API_KEY = "your_key_here"
-RENDER_API_URL = "https://onrender.com"
+RENDER_API_URL = "https://news-dashboard-s7q8.onrender.com/predict"
 ```
 
 ### 4. Run the project
