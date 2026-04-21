@@ -1,21 +1,27 @@
+# 📊 Basic AI News Dashboard
 
-## 📰 Basic AI News Dashboard
 A real-time news aggregation and analysis platform. This project uses FastAPI to serve an AI-powered prediction model and Streamlit to provide a clean, interactive user dashboard.
+
 ## 🚀 Live Demo
 
-* Dashboard: https://waflpredic.streamlit.app/
-* API Documentation: https://news-dashboard-s7q8.onrender.com/docs
+* **Dashboard:** [https://streamlit.app](https://streamlit.app)
+* **API Documentation:** [https://news-dashboard-s7q8.onrender.com/docs](https://news-dashboard-s7q8.onrender.com/docs)
+
+---
 
 ## 🛠️ Technology Stack
 
-* Frontend: [Streamlit](https://streamlit.io/) for the interactive dashboard.
-* Backend API: [FastAPI](https://fastapi.tiangolo.com/) for serving predictions.
-* Deployment: [Render](https://render.com/) (Backend) & [Streamlit Community Cloud](https://streamlit.io/cloud) (Frontend).
-* AI/ML: Custom prediction model served via FastAPI.
-* Data Source: News data via: https://newsdata.io
+* **Frontend:** [Streamlit](https://streamlit.io) for the interactive dashboard.
+* **Backend API:** [FastAPI](https://tiangolo.com) for serving predictions.
+* **Deployment:** [Render](https://render.com) (Backend) & [Streamlit Community Cloud](https://streamlit.iocloud) (Frontend).
+* **AI/ML:** Custom prediction model served via FastAPI.
+* **Data Source:** News data via: [https://newsdata.io](https://newsdata.io)
+
+---
 
 ## 📁 Project Structure
 
+```text
 ├── SRC/
 │   ├── api.py          # FastAPI application (Backend)
 │   ├── app.py          # Streamlit application (Frontend)
@@ -23,37 +29,39 @@ A real-time news aggregation and analysis platform. This project uses FastAPI to
 │   └── train.py        # AI Training & Testing
 ├── requirements.txt    # Project dependencies
 └── README.md
+```
+
+---
 
 ## ⚙️ Installation & Local Setup
 
-   1. Clone the repository:
-
+### 1. Clone the repository
+```bash
 git clone https://github.com/wafiai/News-Dashboard
-cd news-dashboard
+cd News-Dashboard
+```
 
-
-   1. Set up a virtual environment & install dependencies:
-
+### 2. Set up a virtual environment
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-
-   1. Environment Variables:
-   Create a .env file in the root directory:
-
+### 3. Environment Variables
+Create a `.env` file in the root directory:
+```text
 NEWS_API_KEY = "your_key_here"
-RENDER_API_URL = "https://news-dashboard-s7q8.onrender.com/predict"
+RENDER_API_URL = "https://onrender.com"
+```
 
+### 4. Run the project
+* **Start API:** `uvicorn SRC.api:app --reload`
+* **Start Dashboard:** `streamlit run SRC.app.py`
 
-   1. Run the project:
-
-
-* Start API: uvicorn SRC.api:app --reload
-* Start Dashboard: streamlit run SRC.app.py
+---
 
 ## 🔐 Deployment Notes
 
-* Secrets Management: API keys are managed via Streamlit Secrets and Render Environment Variables.
-* Cold Starts: The backend API on Render (free tier) may take ~30 seconds to wake up on the first request.
-
+* **Secrets Management:** API keys are managed via Streamlit Secrets and Render Environment Variables to ensure security.
+* **Cold Starts:** The backend API on Render (free tier) may take ~30 seconds to wake up on the first request.
