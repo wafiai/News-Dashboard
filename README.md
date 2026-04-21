@@ -27,28 +27,33 @@ A real-time news aggregation and analysis platform. This project uses FastAPI to
 ## ⚙️ Installation & Local Setup
 
    1. Clone the repository:
-   
-   git clone git clone https://github.com/wafiai/News-Dashboard
-   cd news-dashboard
-   
-   2. Set up a virtual environment & install dependencies:
-   
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   pip install -r requirements.txt
-   
-   3. Environment Variables:
-   Create a .env file in the root directory and add your keys:
-   
-   NEWS_API_KEY = "your_key_here"
-   RENDER_API_URL = "https://news-dashboard-s7q8.onrender.com/predict"
-   
-   4. Run the project:
-   * Start API: uvicorn SRC.api:app --reload
-      * Start Dashboard: streamlit run SRC.app.py
-   
+
+git clone https://github.com/wafiai/News-Dashboard
+cd news-dashboard
+
+
+   1. Set up a virtual environment & install dependencies:
+
+python -m venv venv
+source venv/bin/activate  # On Windows use venv\Scripts\activate
+pip install -r requirements.txt
+
+
+   1. Environment Variables:
+   Create a .env file in the root directory:
+
+NEWS_API_KEY = "your_key_here"
+RENDER_API_URL = "https://news-dashboard-s7q8.onrender.com/predict"
+
+
+   1. Run the project:
+
+
+* Start API: uvicorn SRC.api:app --reload
+* Start Dashboard: streamlit run SRC.app.py
+
 ## 🔐 Deployment Notes
 
-* Secrets Management: API keys are managed via Streamlit Secrets and Render Environment Variables to ensure security.
+* Secrets Management: API keys are managed via Streamlit Secrets and Render Environment Variables.
 * Cold Starts: The backend API on Render (free tier) may take ~30 seconds to wake up on the first request.
 
