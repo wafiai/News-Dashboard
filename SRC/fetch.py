@@ -19,7 +19,7 @@ def newsAPI():
   "&sort=source"
   "&excludefield=ai_summary,ai_org,ai_region,sentiment_stats,duplicate,sentiment,ai_tag,category,video_url,keywords,source_priority,pubdatetz,source_url"
   "&size=1") # Preparing Api params and adding api key
-    response = requests.get(LINK,timeout=16) # Requesting get from api with timeout set as 10 ofc
+    response = requests.get(LINK,timeout=10) # Requesting get from api with timeout set as 10 ofc
     status = response.status_code
     data = response.json()
     return data
@@ -52,8 +52,8 @@ def cleanoutput():
 def Prediction():
     Clean_Article = cleanoutput() 
     API = 'https://news-dashboard-s7q8.onrender.com/predict'
-    NEWS = (Clean_Article["Description"] + "" + Clean_Article["Title"])
-    response = requests.post(API,json={"text":NEWS},timeout=14)
+    NEWS = (Clean_Article["Title"] + "" + Clean_Article["Description"])
+    response = requests.post(API,json={"text":NEWS},timeout=60)
     result = response.json()
     return result
 
